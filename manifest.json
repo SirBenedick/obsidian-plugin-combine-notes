@@ -3,7 +3,7 @@
 	"name": "Combine Notes",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Merge notes - Provide LLM with your context",
+	"description": "Merge notes - Provide LLM with your context.",
 	"author": "Ben",
 	"authorUrl": "https://github.com/SirBenedick",
 	"isDesktopOnly": false
