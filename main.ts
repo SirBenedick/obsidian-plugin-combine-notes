@@ -12,7 +12,13 @@ class FolderSuggestModal extends FuzzySuggestModal<TFolder> {
 
     // Get all folders in the vault
     getItems(): TFolder[] {
-        return this.app.vault.getAllLoadedFiles().filter(f => f instanceof TFolder) as TFolder[];
+        const folders: TFolder[] = [];
+        for (const f of this.app.vault.getAllLoadedFiles()) {
+            if (f instanceof TFolder) {
+                folders.push(f);
+            }
+        }
+        return folders;
     }
 
     // Get the text to display for each folder
@@ -133,7 +139,7 @@ export default class CombineNotesPlugin extends Plugin {
                             .setTitle('Combine notes in this folder')
                             .setIcon('documents') 
                             .onClick(async () => {
-                                this.combineNotes(file as TFolder);
+                                this.combineNotes(file);
                             });
                     });
                 }
@@ -284,7 +290,13 @@ class FolderSuggestModalForPreview extends FuzzySuggestModal<TFolder> {
 	}
 
 	getItems(): TFolder[] {
-		return this.app.vault.getAllLoadedFiles().filter(f => f instanceof TFolder) as TFolder[];
+		const folders: TFolder[] = [];
+		for (const f of this.app.vault.getAllLoadedFiles()) {
+			if (f instanceof TFolder) {
+				folders.push(f);
+			}
+		}
+		return folders;
 	}
 
 	getItemText(folder: TFolder): string {
@@ -355,7 +367,13 @@ class FolderSuggestModalForDirectCopy extends FuzzySuggestModal<TFolder> {
 	}
 
 	getItems(): TFolder[] {
-		return this.app.vault.getAllLoadedFiles().filter(f => f instanceof TFolder) as TFolder[];
+		const folders: TFolder[] = [];
+		for (const f of this.app.vault.getAllLoadedFiles()) {
+			if (f instanceof TFolder) {
+				folders.push(f);
+			}
+		}
+		return folders;
 	}
 
 	getItemText(folder: TFolder): string {
